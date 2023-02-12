@@ -10,7 +10,7 @@ const nextConfig = {
         includePaths: [
             path.join(__dirname, "styles")
         ],
-        prependData: `@import "./base.scss";`,
+        prependData: `@import '@/styles/base.scss';`,
     }
 }
 
