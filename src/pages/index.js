@@ -4,19 +4,20 @@ import { Roboto } from '@next/font/google'
 
 import styles from '@/styles/Home.module.scss'
 import Header from '@/components/header/Header'
+import Footer from '@/components/footer/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
-const roboto = Roboto({
-    weight: '400',
-    subsets: ['latin'],
-})
+// const inter = Inter({ subsets: ['latin'] })
+// const roboto = Roboto({
+//     weight: '400',
+//     subsets: ['latin'],
+// })
 
 // MongoDB ==> utils, api
 // Redux =>  
 
 export default function Home() {
     return (
-        <div className={roboto.className}>
+        <>
             <Head>
                 <title>Alvin & Co</title>
                 <meta name="description" content="Alvin & Co shopping services for all of your needs" />
@@ -25,9 +26,8 @@ export default function Home() {
             </Head>
 
             <Header />
-            <main className={`${roboto.className} ${styles.red}`}>
-            </main>
-        </div>
+            <Footer />
+        </>
     )
 }
 

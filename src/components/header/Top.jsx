@@ -43,7 +43,7 @@ const Top = () => {
                             <span>Wistlist</span>
                         </Link>
                     </li>
-                    <li className={styles.li}
+                    <ul className={styles.li}
                         onMouseOver={() => setVisible(true)}
                         onMouseLeave={() => setVisible(false)}
                     >
@@ -69,7 +69,7 @@ const Top = () => {
                         {
                             visible && <UserMenu loggedIn={loggedIn} />
                         }
-                    </li>
+                    </ul>
                 </ul>
             </div>
         </div>
