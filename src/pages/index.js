@@ -1,10 +1,9 @@
 import Head from 'next/head'
-import { Inter } from '@next/font/google'
-import { Roboto } from '@next/font/google'
-
-import styles from '@/styles/Home.module.scss'
 import Header from '@/components/header/Header'
 import Footer from '@/components/footer/Footer'
+import axios from 'axios'
+
+import { useSession, signIn, signOut } from "next-auth/react"
 
 // const inter = Inter({ subsets: ['latin'] })
 // const roboto = Roboto({
@@ -15,7 +14,9 @@ import Footer from '@/components/footer/Footer'
 // MongoDB ==> utils, api
 // Redux =>  
 
-export default function Home() {
+export default function Home({ country }) {
+    const { data: session } = useSession()
+    console.log(session)
     return (
         <>
             <Head>
@@ -25,10 +26,35 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Header />
-            <Footer />
+            <Header country={country} />
+            {
+                session ? "You are logged in" : "you are not"
+            }
+            <Footer country={country} />
         </>
     )
+}
+
+export async function getServerSideProps() {
+    let data = await axios
+        .get('https://api.ipregistry.co/?key=pnr5zpg9h6vz5yg3')
+        .then((res) => {
+            return res.data.location.country
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+    return {
+        props: {
+            country: {
+                // Real API
+                // name: data.name,
+                // flag: data.flag.emojitwo
+                name: "Indonesia",
+                flag: 'https://img.freepik.com/free-vector/illustration-indonesia-flag_53876-27131.jpg?w=360'
+            }
+        }
+    }
 }
 
 // Notes:

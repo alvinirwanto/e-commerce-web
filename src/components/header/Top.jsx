@@ -6,9 +6,10 @@ import { RiAccountPinCircleLine, RiArrowDropDownFill, RiCustomerServiceLine, RiQ
 import Link from 'next/link'
 import { useState } from 'react'
 import UserMenu from './UserMenu'
+import { useSession } from 'next-auth/react'
 
-const Top = () => {
-    const [loggedIn, setLoggedIn] = useState(true)
+const Top = ({ country }) => {
+    const { data: session } = useSession()
     const [visible, setVisible] = useState(false)
 
     return (
@@ -18,12 +19,10 @@ const Top = () => {
                 <ul className={styles.top__list}>
                     <li className={styles.li}>
                         <img
-                            src='https://img.freepik.com/free-vector/illustration-indonesia-flag_53876-27131.jpg?w=360'
-                            // width={100}
-                            // height={100}
+                            src={country.flag}
                             alt='Bendera'
                         />
-                        <span>Indonesia / Rp</span>
+                        <span>{country.name} / Rp</span>
                     </li>
                     <li className={styles.li}>
                         <RiShieldLine />
@@ -48,11 +47,11 @@ const Top = () => {
                         onMouseLeave={() => setVisible(false)}
                     >
                         {
-                            loggedIn ? (
+                            session ? (
                                 <li className={styles.li}>
                                     <div className={styles.flex}>
-                                        <img src="https://www.pngall.com/wp-content/uploads/12/Avatar-Profile.png" alt="profile" />
-                                        <span>Alvin</span>
+                                        <img src={session.user.image} alt="profile" />
+                                        <span>{session.user.name}</span>
                                         <RiArrowDropDownFill />
                                     </div>
                                 </li>
@@ -67,7 +66,7 @@ const Top = () => {
                             )
                         }
                         {
-                            visible && <UserMenu loggedIn={loggedIn} />
+                            visible && <UserMenu session={session} />
                         }
                     </ul>
                 </ul>

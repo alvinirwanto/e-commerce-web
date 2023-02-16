@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { RiMapPinLine } from 'react-icons/ri';
 import styles from './footer.module.scss'
 
-export default function Copyright() {
+export default function Copyright({ country }) {
     return (
         <div className={styles.footer__copyright}>
             <section>
@@ -12,8 +12,8 @@ export default function Copyright() {
             <section>
                 <ul>
                     {
-                        data.map((link) => (
-                            <li>
+                        data.map((link, i) => (
+                            <li key={i}>
                                 <Link href={link.link}>
                                     {link.name}
                                 </Link>
@@ -24,7 +24,7 @@ export default function Copyright() {
                     <li>
                         <Link href="">
                             <RiMapPinLine />
-                            Indonesia
+                            {country.name}
                         </Link>
                     </li>
                 </ul>
