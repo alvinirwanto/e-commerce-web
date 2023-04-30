@@ -1,5 +1,5 @@
 .footer {
-    background-color: #F8F8F8;
+    background-color: $grey-secondary;
 
     &__container {
         position: relative;
@@ -155,7 +155,7 @@
         section {
             text-align: center;
             font-size: 12px;
-            color: #666;
+            color: $grey-primary;
             padding-bottom: 10px;
         }
 

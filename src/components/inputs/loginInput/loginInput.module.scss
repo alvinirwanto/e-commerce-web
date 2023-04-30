@@ -1,0 +1,106 @@
+.input {
+    position: relative;
+    max-width: 380px;
+    width: 100%;
+    background-color: #F0F0F0;
+    margin: 10px 0;
+    height: 55px;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 75% 10%;
+    align-items: center;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+
+    svg {
+        width: 25px;
+        height: 25px;
+        stroke: #6666669A;
+        fill: #6666669A;
+    }
+
+
+    input {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        line-height: 1;
+        font-weight: 400;
+        font-size: 1.1rem;
+        color: #333;
+
+        &::placeholder {
+            color: #aaa;
+            font-weight: 400;
+        }
+    }
+
+    &__pass {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        svg {
+            fill: #000;
+            stroke: #000;
+        }
+    }
+}
+
+.error {
+    background-color: $error-color;
+    // margin-bottom: 2.5rem !important;
+
+    input {
+        color: #FFF !important;
+
+        &::placeholder {
+            color: #FFF !important;
+        }
+    }
+
+    svg {
+        fill: #FFF;
+        stroke: #FFF;
+    }
+
+    // &__popup {
+    //     position: absolute;
+    //     top: -70px;
+    //     background-color: $red-color;
+    //     height: 60px;
+    //     width: 100%;
+    //     border-radius: 15px;
+    //     display: grid;
+    //     place-items: center;
+    //     color: #FFF;
+    //     font-weight: 700;
+    //     font-size: 14px;
+    //     padding: 10px;
+
+    //     span {
+    //         position: absolute;
+    //         bottom: -9px;
+    //         left: 1rem;
+    //         border-top: 10px solid $red-color;
+    //         border-right: 10px solid transparent;
+    //         border-left: 10px solid transparent;
+    //     }
+    // }
+
+    &__popup {
+        // position: absolute;
+        // bottom: -1.5rem;
+        color: $red-color;
+        font-size: 14px;
+        width: 100%;
+
+        span {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            text-align: left;
+        }
+    }
+}

@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .login__input_form:focus ~ .floating-label,
+.login__input_form:not(:focus):valid ~ .floating-label {
+  top: 2px;
+  bottom: 10px;
+  left: 0;
+  opacity: 1;
+  margin-top: 5px;
+}
+
+.login__input_form:not(:placeholder-shown) {
+  margin-bottom: -17px;
+}
+
+.floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 13px;
+  transition: 0.1s ease all;
+} */
+
+.input__container {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.input__field {
+  border: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  color: #000;
+  /* font-size: 18px; */
+  width: 100%;
+}
+
+.input__placeholder {
+  position: absolute;
+  left: 0;
+  pointer-events: none;
+  transform-origin: 0 50%;
+  transition: transform 200ms, color 200ms;
+}
+
+.input__field:focus ~ .input__placeholder,
+.input__field:not(:placeholder-shown) ~ .input__placeholder {
+  transform: translateY(-11px) translateX(0) scale(0.7);
+  color: #000;
+}
+
+.input__field:not(:placeholder-shown) ~ .input__placeholder {
+  color: #808097;
+}
+
+.input__field:not(:placeholder-shown) {
+  margin-bottom: -15px;
+}
+
+.input__field:focus {
+  margin-bottom: -15px;
+}
+
+/* .swiper-button-prev, 
+.swiper-button-next {
+    display: none !important;
+} */
+
+/* =========== Swiper ================== */
+/* .swiper {
+  width: 100%;
+  height: 20rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+
+  /* shadow-md *
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper:hover .swiper-button-prev, .swiper:hover .swiper-button-next {
+    display: grid !important;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-pagination-bullet {
+    width: 8px !important;
+    border-radius: 13px !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #FFF !important;
+    width: 50px !important;
+}
+
+.swiper-button-prev, 
+.swiper-button-next {
+    color: #FFF !important;
+    transform: scale(.5) !important;
+    width: 50px !important;
+    height: 80px !important;
+    transition: .2s;
+    background-color: #00000043 !important;
+    display: none !important;
+    place-items: center !important;
+}
+
+.swiper-button-prev {
+    left: -13px !important;
+}
+
+.swiper-button-next {
+    right: -13px !important;
+} */
+
+/* .mySwiper {
+    height: 16rem;
+} */
+
+
+@layer components {
+  .header__top-item {
+    @apply flex justify-center items-center gap-1 text-primary-grey cursor-pointer text-sm hover:text-secondary-blue;
+  }
+
+  .btn_primary {
+    @apply bg-secondary-blue border-2 border-secondary-blue text-white font-medium cursor-pointer w-[6.5rem] rounded-md py-2 duration-300
+    hover:shadow-lg;
+  }
+
+  .btn_outline {
+    @apply bg-soft-blue border-2 border-secondary-blue text-secondary-blue font-medium cursor-pointer w-[6.5rem] rounded-md py-2 duration-200 
+    hover:bg-transparent hover:border-2 hover:border-white hover:shadow-lg;
+  }
+
+  .toggle_active {
+    @apply bg-white rounded-md m-1 flex justify-center items-center py-2;
+  }
+
+  .toggle_nonactive {
+    @apply text-primary-grey py-2;
+  }
+
+  .container {
+    @apply max-w-[95%] xl:max-w-[80%] m-auto min-h-screen py-9;
+  }
+
+  /* Form */
+  /* .input__container {
+    @apply h-full w-full relative grid place-items-center
+  }
+
+  .input__form {
+    @apply border-0 outline-0 p-0 w-full focus:mb-[-12px]
+  }
+
+  .input__placeholder {
+    @apply absolute left-0 top-[20px] pointer-events-none origin-[0_50%] duration-200
+  } */
+}
